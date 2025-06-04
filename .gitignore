@@ -1,0 +1,11 @@
+node_modules
+dist
+.env.*
+!**/.env.scripts.example
+!.env.example
+!.env.local
+/.env.local
+logs
+deleted-*.json
+# Sentry Config File
+.sentryclirc

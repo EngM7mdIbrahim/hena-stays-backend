@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #28a745;
+      text-align: center;
+    }
+
+    .content {
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      margin: 15px 0;
+    }
+
+    .details {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 0.9em;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .contact p {
+      margin: 5px 0;
+    }
+  </style>
+  <title>Your Listings With No Approval Issues Have Been Successfully Imported! 🎉</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">Your Listings With No Approval Issues Have Been Successfully Imported! 🎉</div>
+    <div class="content">
+      <p>Dear <%= data.name %>,</p>
+      <p>Great news! Your XML Properties with no approval issues from the xml feed process with url: <%= data.url %> has been successfully imported.</p>
+    <div class="contact">
+      <p>If you have any questions or need assistance, our support team is here to help.</p>
+      <p>Thank you for choosing our services!</p>
+      <p style="margin-top: 30px">Best regards,<br />The Admin Team</p>
+    </div>
+  </div>
+</body>
+
+</html>

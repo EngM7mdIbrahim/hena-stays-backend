@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #dc3545;
+      text-align: center;
+    }
+
+    .content {
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      margin: 15px 0;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 0.9em;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .contact p {
+      margin: 5px 0;
+    }
+
+    .support-info {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+  </style>
+  <title>Subscription Request Update</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">Properties Importing approval rejected!</div>
+    <div class="content">
+      <p>Dear <%= data.name %>,</p>
+      <p>We have reviewed your xml properties approval importing issues for the url: <%= data.url %> and regret to inform you that we are unable to approve it at this
+        time.</p>
+      <p>The reason for rejection is: <%= data.message %></p>
+      <div class="support-info">
+        <p>If you would like to:</p>
+        <ul>
+          <li>Discuss this decision</li>
+          <li>Submit a new request</li>
+          <li>Get more information</li>
+        </ul>
+        <p>
+          You can reach out to us through:
+        </p>
+        <ul>
+          <li>WhatsApp: +971 52 693 1043</li>
+          <li>
+            Email: <a href="mailto:support@truedar.ae">support@truedar.ae</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="contact">
+    <p>
+      This is an automated email confirming your xml properties importing request details.
+    </p>
+    <p>Thank you for using TrueDar!</p>
+    <p style="margin-top: 50px">Best regards,<br />TrueDar Team</p>
+  </div>
+  </div>
+</body>
+
+</html>

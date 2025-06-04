@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 80%;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #007bff;
+        text-align: center;
+      }
+      .content {
+        margin-bottom: 20px;
+      }
+      .content p {
+        margin: 15px 0;
+      }
+      ol {
+        padding-left: 20px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      .contact {
+        margin-top: 20px;
+        font-size: 0.9em;
+        padding-top: 20px;
+      }
+      .contact p {
+        margin: 5px 0;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <title>Your Property Request on TrueDar</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Your Property Request on TrueDar</div>
+      <div class="content">
+        <p>Hello <%= data?.name ?? data?.email?.split("@")?.at(0) %>,</p>
+        <p>Thank you for submitting your property request on TrueDar!</p>
+        <p>
+          <strong>How to View Your Messages:</strong> If you chose to be
+          contacted through TrueDar, you can view the messages you receive by:
+        </p>
+        <ol>
+          <li>Logging into your account.</li>
+          <li>
+            Clicking on the profile icon at the top right of the homepage.
+          </li>
+          <li>Selecting "Messaging" to see all your messages.</li>
+        </ol>
+        <p>
+          <strong>Request Duration:</strong> Your request will remain active for
+          7 days. After this period, it will be automatically deactivated. If
+          your request is still not fulfilled, please contact us to reactivate
+          it, and we will be happy to assist.
+        </p>
+        <p>
+          <strong>Need Assistance?</strong> For any questions or assistance, you
+          can reach out to us through:
+        </p>
+        <ul>
+          <li>WhatsApp: +971 52 693 1043</li>
+          <li>
+            Email: <a href="mailto:support@truedar.ae">support@truedar.ae</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact">
+        <p>
+          This is an automated email confirming your property request details.
+        </p>
+        <p>Thank you for using TrueDar!</p>
+        <p style="margin-top: 50px">Best regards,<br />TrueDar Team</p>
+      </div>
+    </div>
+  </body>
+</html>

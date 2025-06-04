@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listings Imported</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header,
+      .footer {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .footer > div {
+        width: 100%;
+        text-align: left;
+        margin-top: 50px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .content {
+        margin-bottom: 20px;
+      }
+
+      .content h2 {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .content h3 {
+        font-size: 18px;
+        margin-top: 15px;
+      }
+
+      .content p {
+        margin: 10px 0;
+      }
+
+      .important {
+        font-weight: bold;
+      }
+
+      ol {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>
+          A List of Properties Has Been Successfully Imported to Your Account
+        </h1>
+      </div>
+      <div class="content">
+        <p>Dear <span class="important"><%= data?.name %></span>,</p>
+        <p>
+          <% if (data?.isNewUser) { %> We are excited to inform you that you
+          have been added as an agent <% if (data?.role === "Company") { %>
+          <span class="important">under company <%= data?.creator %></span>
+          <% } else { %>
+          <span class="important"
+            >from recommendation of broker <%= data?.creator %></span
+          >
+          <% } %> <% } else { %> We are excited to inform you that some updates
+          has been applied to your listings under your account from <% if
+          (data?.role === "Company") { %>
+          <span class="important">company <%= data?.creator %></span>
+          <% } else { %>
+          <span class="important">broker <%= data?.creator %></span>
+          <% } %> <% } %> on the TrueDar platform. This was done as part of the
+          listing import process using the XML feed provided by this user. <% if
+          (!data?.isNewUser) { %> Please know that these updates are reviewed by
+          the admin team before being applied to your listings. We take care of
+          the quality of the listings and the accuracy of the data. <% } %>
+        </p>
+        <h2>Here are the details:</h2>
+        <% if (data?.isNewUser) { %>
+        <p>
+          <span class="important">Your New Account:</span> An account has been
+          automatically created for you with the email address
+          <span class="important"><%= data?.email %></span>. We have sent your
+          account credentials in a separate email. Please check your inbox for
+          the login details.
+        </p>
+        <% } %>
+        <p>
+          <span class="important">Your Listings:</span> All property listings
+          assigned to you in the XML feed have been successfully imported and
+          are now available under your account.
+        </p>
+        <h2>What You Need to Do:</h2>
+        <h3>Check Your Listings:</h3>
+        <p>
+          We recommend reviewing all your imported listings to ensure that all
+          details are accurate and up-to-date. To do this:
+        </p>
+        <ol>
+          <li>Click on the "profile" icon at the top right of the page.</li>
+          <li>Select "My Listings" from the dropdown menu.</li>
+          <li>
+            You will see all your listings on this page and can make any
+            necessary adjustments directly on the platform.
+          </li>
+        </ol>
+        <h3>Need Help?</h3>
+        <p>For any questions or assistance, you can reach out to us through:</p>
+        <p>WhatsApp: +971 52 693 1043</p>
+        <p>Email: support@truedar.ae</p>
+      </div>
+      <div class="footer">
+        <p>
+          We are thrilled to have you on board and look forward to helping you
+          succeed in your real estate endeavors.
+        </p>
+        <div>
+          <p>Best regards,</p>
+          <p>TrueDar Team</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

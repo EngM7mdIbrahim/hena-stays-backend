@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #001749;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .content {
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        margin: 15px 0;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 10px;
+      }
+
+      .note {
+        font-size: 0.9em;
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+
+      .note p {
+        margin: 5px 0;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9em;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 50px;
+        background-color: #001749;
+        color: #fff !important;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      div > ol > li.bold {
+        font-weight: 700;
+      }
+
+      div > ol > li.bold li {
+        font-weight: 400;
+      }
+    </style>
+    <title>New Account</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">New Account</div>
+      <div class="content">
+        <p>Hello <%= data?.name %>,</p>
+        <p>
+          We are thrilled to welcome you to TrueDar! Your new account has been
+          successfully created. Below are your account details:
+        </p>
+        <p><strong>Email:</strong> <%= data?.email %></p>
+        <p><strong>Password:</strong> <%= data?.password %></p>
+        <p>
+          Please log in using the provided details. For security reasons, we
+          recommend changing your password after your first login. Follow these
+          steps to change your password after your first login:
+        </p>
+        <ol>
+          <li class="bold">Log in with your provided details.</li>
+          <li class="bold">
+            Change your password:
+            <ol>
+              <li>
+                Click on your profile icon at the top right corner of the page.
+              </li>
+              <li>Select 'Profile' from the dropdown menu.</li>
+              <li>Click on 'Edit Profile'.</li>
+              <li>Enter your new password in the provided fields.</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+      <div class="note">
+        <p>
+          We recommend changing your password immediately to keep your account
+          secure.
+        </p>
+      </div>
+      <div class="footer">
+        <a href="https://www.truedar.ae/login" class="button">Login</a>
+      </div>
+      <p>Best regards,<br />TrueDar</p>
+    </div>
+  </body>
+</html>
