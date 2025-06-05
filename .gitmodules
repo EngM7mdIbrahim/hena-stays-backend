@@ -1,0 +1,3 @@
+[submodule "src/types"]
+	path = src/types
+	url = git@github.com:EngM7mdIbrahim/hena-stays-types.git

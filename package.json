@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "tsx ./src/config/build-env.ts && npx tsc && cp ./tsconfig-paths-bootstrap.js ./dist/tsconfig-paths-bootstrap.js && cp ./tsconfig-paths-docker-bootstrap.js ./dist/tsconfig-paths-docker-bootstrap.js",
-    "postbuild": "npm run sentry:sourcemaps",
-    "start": "node ./dist/apps/backend/src/config/env.js && node -r ./dist/tsconfig-paths-bootstrap.js ./dist/apps/backend/src/index.js",
-    "start:docker": "node -r ./tsconfig-paths-docker-bootstrap.js ./dist/src/index.js",
+    "prebuild": "cd src/types && npm install && npm run build",
+    "build": "tsx ./src/config/build-env.ts && npx tsc-alias",
+    "start": "node ./dist/src/config/env.js && node ./dist/src/index.js",
     "dev": "nodemon --exec tsx src/index.ts",
     "format": "prettier --write .",
     "lint": "eslint . --ext .ts",
@@ -15,10 +14,7 @@
     "db:transfer": "ts-node -r tsconfig-paths/register ./scripts/migrations/index.ts",
     "db:clean": "ts-node -r tsconfig-paths/register ./scripts/filters/main.ts",
     "db:reset": "ts-node -r tsconfig-paths/register ./scripts/transfer/transfer-db.ts",
-    "images:transfer": "ts-node -r tsconfig-paths/register ./scripts/transfer/transfer-media.ts",
-    "sentry:sourcemaps": "node ./sentry-sourcemaps.js",
-    "sentry:sourcemaps:local": "sentry-cli sourcemaps inject --org truedar-personal --project truedar-v2-be ./dist/apps/backend && sentry-cli sourcemaps upload --org truedar-personal --project truedar-v2-be ./dist/apps/backend",
-    "sentry:sourcemaps:ci": "sentry-cli sourcemaps inject --org truedar-personal --project truedar-v2-be ./dist && sentry-cli sourcemaps upload --org truedar-personal --project truedar-v2-be ./dist"
+    "images:transfer": "ts-node -r tsconfig-paths/register ./scripts/transfer/transfer-media.ts"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +41,7 @@
     "@typescript-eslint/parser": "^8.8.0",
     "migrate-mongo": "^11.0.0",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.1"
   },
   "dependencies": {
@@ -90,7 +87,6 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "stripe": "^18.1.0",
-    "tsconfig-paths": "^4.2.0",
     "validator": "^13.12.0",
     "xml2js": "^0.6.2",
     "zod": "^3.23.8"
