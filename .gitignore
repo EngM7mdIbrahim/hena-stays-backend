@@ -9,3 +9,4 @@ logs
 deleted-*.json
 # Sentry Config File
 .sentryclirc
+**/*.diff
